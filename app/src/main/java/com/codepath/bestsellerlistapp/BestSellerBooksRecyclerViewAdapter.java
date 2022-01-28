@@ -39,7 +39,8 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
         holder.mItem = books.get(position);
         holder.mBookTitle.setText(books.get(position).title);
         holder.mBookAuthor.setText(books.get(position).author);
-        holder.mRankingText.setText(books.get(position).rank);
+        holder.mRankingText.setText(String.valueOf(books.get(position).rank));
+        holder.mBookDescription.setText(books.get(position).description);
 
         BestSellerBook bestSellerBook = books.get(position);
         Glide.with(holder.mView)
@@ -71,8 +72,9 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
         public final TextView mBookTitle;
         public final TextView mBookAuthor;
         public BestSellerBook mItem;
-        public final TextView mRankingText;
+        public TextView mRankingText;
         public ImageView mBookImage;
+        public TextView mBookDescription;
 
         public BookViewHolder(View view) {
             super(view);
@@ -81,6 +83,8 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
             mBookAuthor = (TextView) view.findViewById(R.id.book_author);
             mRankingText = (TextView) view.findViewById(R.id.ranking);
             mBookImage = (ImageView) view.findViewById(R.id.book_image);
+            mBookDescription = (TextView) view.findViewById(R.id.book_description);
+
 
 
         }
